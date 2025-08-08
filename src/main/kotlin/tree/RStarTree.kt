@@ -198,6 +198,7 @@ class RStarTree<V>(
                 adjustTree(
                     node,
                     null,
+                    reinsertedOnLevels
                 ) // null for siblingNode as no split happened at this exact step
             }
         } else { // go deeper into the tree
@@ -430,7 +431,7 @@ class RStarTree<V>(
             return
         }
         val (newNode1, newNode2) = splitNode(node)
-        adjustTree(newNode1, newNode2)
+        adjustTree(newNode1, newNode2, reinsertedOnLevels)
     }
 
     /**
@@ -649,8 +650,7 @@ class RStarTree<V>(
      *   split).
      * @param siblingNode The new sibling node if a split occurred, otherwise null.
      */
-    private fun adjustTree(node: RStarTreeNode<V>, siblingNode: RStarTreeNode<V>?) {
-        val currentReinsertedOnLevels = mutableSetOf<Int>()
+    private fun adjustTree(node: RStarTreeNode<V>, siblingNode: RStarTreeNode<V>?, reinsertedOnLevels: MutableSet<Int>) {
         var currentNode = node
         var newSiblingNode = siblingNode
 
@@ -686,7 +686,7 @@ class RStarTree<V>(
 
             // check if the parent is overflowing
             if (parent.isOverflowing()) {
-                overFlowTreatment(parent, currentReinsertedOnLevels)
+                overFlowTreatment(parent, reinsertedOnLevels)
                 // after overflow of the parent node, the tree might have changed significantly
                 // (e.g. parent split) -> will be handled by the adjustTree() call that follows it
                 return
