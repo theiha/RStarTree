@@ -1,13 +1,13 @@
 package org.theiha.ui
 
+import org.theiha.tree.RStarTree
+import org.theiha.tree.util.Point
 import java.awt.Graphics
 import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
 import java.util.UUID
 import javax.swing.JPanel
 import javax.swing.SwingUtilities
-import org.theiha.tree.RStarTree
-import org.theiha.tree.util.Point
 
 class RectanglePanel : JPanel() {
     private val shapes = mutableMapOf<String, Shape>()
@@ -42,11 +42,12 @@ class RectanglePanel : JPanel() {
         super.paintComponent(g)
         val mbrSize = drawRStarTree(g, index)
 
-        val lines = listOf(
-            "Click to add a shape",
-            "Right-click to remove a shape",
-            "R* Tree with $mbrSize rectangles"
-        )
+        val lines =
+            listOf(
+                "Click to add a shape",
+                "Right-click to remove a shape",
+                "R* Tree with $mbrSize rectangles",
+            )
 
         var y = 20
         for (line in lines) {
@@ -64,9 +65,9 @@ class RectanglePanel : JPanel() {
 fun drawRStarTree(g: Graphics, tree: RStarTree<*>): Int {
     val mbrs = tree.getAllMBRs()
 
-
     mbrs.forEach { mbr ->
-        g.drawRect(
+        g.drawR
+        ect(
             mbr.leftUpperCorner.x.toInt(),
             mbr.leftUpperCorner.y.toInt(),
             mbr.width.toInt(),

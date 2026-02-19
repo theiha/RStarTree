@@ -1,8 +1,8 @@
 package org.theiha.tree
 
-import kotlin.math.max
 import org.theiha.tree.util.MinimumBoundingRectangle
 import org.theiha.tree.util.Point
+import kotlin.math.max
 
 /**
  * Represents a 2 dimensional R*-tree, a spatial data structure used for indexing two-dimensional
@@ -198,7 +198,7 @@ class RStarTree<V>(
                 adjustTree(
                     node,
                     null,
-                    reinsertedOnLevels
+                    reinsertedOnLevels,
                 ) // null for siblingNode as no split happened at this exact step
             }
         } else { // go deeper into the tree
@@ -650,7 +650,11 @@ class RStarTree<V>(
      *   split).
      * @param siblingNode The new sibling node if a split occurred, otherwise null.
      */
-    private fun adjustTree(node: RStarTreeNode<V>, siblingNode: RStarTreeNode<V>?, reinsertedOnLevels: MutableSet<Int>) {
+    private fun adjustTree(
+        node: RStarTreeNode<V>,
+        siblingNode: RStarTreeNode<V>?,
+        reinsertedOnLevels: MutableSet<Int>,
+    ) {
         var currentNode = node
         var newSiblingNode = siblingNode
 

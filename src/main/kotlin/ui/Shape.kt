@@ -1,10 +1,10 @@
 package org.theiha.ui
 
+import org.theiha.tree.util.MinimumBoundingRectangle
+import org.theiha.tree.util.Point
 import java.awt.Color
 import java.awt.Graphics
 import kotlin.random.Random
-import org.theiha.tree.util.MinimumBoundingRectangle
-import org.theiha.tree.util.Point
 
 interface Shape {
     var color: Color
@@ -66,7 +66,6 @@ data class Circle(
         val diameter = radius * 2
         g.fillOval(topLeftX, topLeftY, diameter, diameter)
     }
-
 
     override fun getMBR(): MinimumBoundingRectangle {
         return MinimumBoundingRectangle(

@@ -1,6 +1,5 @@
 package org.theiha.tree.util
 
-
 /**
  * Represents a point in a 2D space with x and y coordinates.
  *
