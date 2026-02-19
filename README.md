@@ -3,6 +3,11 @@
 A 2-dimensional implementation of the R\*-tree spatial data structure in Kotlin. I also added an
 interactive visualization GUI because I like pretty things and wanted to show my friends.
 
+## Visualization
+![Video](demo/video.mp4)
+
+![Image](demo/image.png)
+
 ## Overview
 
 The R\*-tree is a spatial data structure optimized for indexing objects using their _Minimum
