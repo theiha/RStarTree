@@ -4,7 +4,8 @@ A 2-dimensional implementation of the R\*-tree spatial data structure in Kotlin.
 interactive visualization GUI because I like pretty things and wanted to show my friends.
 
 ## Visualization
-![Video](demo/video.mp4)
+
+<video src="demo/video.mp4" controls="controls"></video>
 
 ![Image](demo/image.png)
 
