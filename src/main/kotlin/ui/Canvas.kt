@@ -66,8 +66,7 @@ fun drawRStarTree(g: Graphics, tree: RStarTree<*>): Int {
     val mbrs = tree.getAllMBRs()
 
     mbrs.forEach { mbr ->
-        g.drawR
-        ect(
+        g.drawRect(
             mbr.leftUpperCorner.x.toInt(),
             mbr.leftUpperCorner.y.toInt(),
             mbr.width.toInt(),
