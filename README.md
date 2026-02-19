@@ -5,7 +5,7 @@ interactive visualization GUI because I like pretty things and wanted to show my
 
 ## Visualization
 
-<video src="demo/video.mp4" controls="controls"></video>
+https://github.com/user-attachments/assets/1c92aa13-42f7-4a96-872e-4517266a6a7a
 
 ![Image](demo/image.png)
 
